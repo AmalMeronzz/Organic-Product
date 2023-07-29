@@ -12,6 +12,9 @@ from datetime import datetime
 from textblob import TextBlob
 
 
+def temfunc():
+    return None
+
 def login(request):
     if request.method == 'POST':
         idname = request.POST['name']
