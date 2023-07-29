@@ -1,0 +1,52 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+                      {% for i in data %}
+                    <center>
+                      <h2 class="card-title" style="text-transform: uppercase;">EDIT {{i.1}} SHOP </h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                          <form  method="post" enctype="multipart/form-data">
+                              {% csrf_token %}
+                      <table class="table">
+                          <tr>
+                              <th>SHOP NAME</th>
+                              <td><input type="text" value="{{i.1}}" name="name" required></td>
+                          </tr>
+                          <tr>
+                              <th>PLACE</th>
+                              <td><input type="text" value="{{i.6}}" name="place" required></td>
+                          </tr>
+                          <tr>
+                               <th>ADDRESS</th>
+                               <td><input type="text" value="{{i.2}}" name="address" required></td>
+                          </tr>
+                          <tr>
+                               <th>PHONE</th>
+                              <td><input type="text" value="{{i.3}}" name="phone" required></td>
+                          </tr>
+                          <tr>
+                              <th>IMAGE</th>
+                              <td><input type="file" src="media/{{i.6}}" name="is_image" required></td>
+                          </tr>
+                          <tr>
+                              <th>EMAIL</th>
+                              <td><input type="email" value="{{i.4}}" name="email" required></td>
+                          </tr>
+                          <tr>
+                              <th>PASSWORD</th>
+                              <td><input type="text" value="{{i.5}}" name="password" required></td>
+                          </tr>
+                          <tr>
+                              <th></th>
+                              <td><input type="submit" value="save"></td>
+                          </tr>
+                      </table>
+                          </form>
+                    </div>
+                       {% endfor %}
+                  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:500px;">
+                  <div class="card-body">
+                    <center><br>
+                      <h2 class="card-title">FARMER UPLOADED PRODUCTS</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th>No.</th>
+                                <th>IMAGE</th>
+                                <th>PRODUCT</th>
+                                <th>FARMER NAME</th>
+                                <th>Quantity</th>
+<!--                                <th>Total_amount</th>-->
+                                <th>Date</th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td> {{ forloop.counter }}</td>
+                                <td><img src="../media/{{i.8}}" width="100px"></td>
+                                <td>{{i.11}}</td>
+                                <td>{{i.1}}</td>
+                                <td>{{i.5}}</td>
+<!--                                <td>{{i.6}}</td>-->
+                                <td>{{i.7}}</td>
+                            <td><a href="../deleteproduct/{{i.0}}"><input type="submit" value="Delete" style="background-color:red; color:white;"></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

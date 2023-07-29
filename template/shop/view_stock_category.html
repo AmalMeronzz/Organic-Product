@@ -1,0 +1,63 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+
+<style>
+    table,th {color:black;}
+</style>
+<div>
+    <div style="min-height:250px; background-color:#207317;">
+    <center><br><br>
+        <b><h2 style="color:white; font-size:35px;">CHOOSE CATEGORY</h2></b><br>
+
+            <table width="400px" border="2px" bgcolor="#10e317">
+                <tr>
+                    <th width="300px" >&nbsp;&nbsp;&nbsp;CATEGORY NAME</th>
+                    <th width="100px">SELECT</th>
+                </tr>
+                 {% for i in data %}
+                <tr>
+                    <td><h4 style="color:black;">&nbsp;&nbsp;&nbsp;{{i.1}}</h4></td>
+                    <td><a href="../viewstock/{{i.0}}">&nbsp;&nbsp;&nbsp;<button style="background:#0c3b07; color:white;">&nbsp;&nbsp;view request &nbsp;&nbsp;</button></a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        <br>
+    </center>
+    </div>
+
+
+ <div class="offer-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
+                        <div class="offer_box">
+                            <h3>Agriculture Products</h3>
+                            <figure><img src="../static/shop/images/offer1.png" alt="img" /></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin_ttt">
+                        <div class="offer_box">
+                            <h3>Fresh Vegatables</h3>
+                            <figure><img src="../static/shop/images/offer2.png" alt="img" /></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmodmpor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin-lkk">
+                        <div class="offer_box">
+                            <h3>Farm Factory</h3>
+                            <figure><img src="../static/shop/images/offer3.png" alt="img" /></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmodmpor incididunt ut labore et dolore magna</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <a class="read-more">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">VIEW CATEGORY AND ITEMS</h2>
+                    </center><br>
+                      <br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th style="color:white;width:150px;"><h4>No.</h4></th>
+                              <th style="color:white; width:300px;"><h4>CATEGORY NAME</h4></th>
+                              <th style="color:white;"><h4>VIEW ITEMS</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td style="color:white;"> {{ forloop.counter }}</td>
+                              <td><h5 style="color:white;">{{i.1}}</h5></td>
+                              <td><div class="badge badge-outline-warning"><a  href="../viewitems/{{i.0}}" style="color:orange;">view items</a></div></td>
+                               </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

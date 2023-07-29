@@ -1,0 +1,105 @@
+{% extends 'login_home.html' %}
+{% block content %}
+    <style>
+        /*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}*/
+html, body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:green;
+    height:100%;
+}
+.container1{
+   height:100%;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+}
+.content1{
+    background-color:white;
+    width:500px;
+    height850px;
+}
+
+.form-title1{
+    padding:10px 40px 0px;
+}
+form{
+    padding:0px 40px;
+}
+input[type=text], [type=email]{
+    border: none;
+    border-bottom: 1px solid black;
+    outline:none;
+    width:100%;
+    margin: 8px 0;
+    padding:10px 0;
+}
+input[type=number]{
+    border: none;
+    border-bottom: 1px solid black;
+    outline:none;
+    margin: 8px 0;
+    padding:5px 0;
+}
+input :hover {
+    background-color: red;
+}
+select{
+    border: none;
+    border-bottom: 1px solid black;
+    outline:none;
+    margin: 8px 0;
+    padding:5px 0;
+    width:50%;
+}
+.beside1{
+    display:flex;
+    justify-content: space-between;
+}
+button{
+    color:#ffffff;
+    background-color: #4caf50;
+    height:40px;
+    width:25%;
+    margin-top:15px;
+    cursor: pointer;
+    border:none;
+    border-radius:2%;
+    outline:none;
+    text-align:center;
+    font-size:16px;
+    text-decoration:none;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+}
+button:hover{
+    background-color:#333333;
+}
+    </style>
+<div class="container1" >
+    <div class="content1">
+            <h1 class="form-title1">SHOP REGISTRATION</h1>
+            <form action="../shopregistration" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+               <input type="text" placeholder="SHOP NAME" name="name"/>
+                <input type="text" placeholder="PLACE" name="is_place1"/>
+                <input type="email" placeholder="Email" name="email">
+            <div class="beside1">
+                <input type="number" placeholder="PHONE NUMBER" name="phone"/>
+                <input type="file" name="image" />
+            </div>
+
+                ADDRESS:
+               <textarea rows="2" cols="55" name="address">
+               </textarea><br>
+                PASSWORD:<input type="password" placeholder="password" name="password"><br>
+                <input type="submit" style=" background-color:#8f2c24; color:white;  height:40px; width:95px; font-size:17px" value="Register"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="../login"><button type="button" style=" background-color:green;">signin </button></a>
+            </form>
+        </div>
+ </div>
+
+{% endblock %}

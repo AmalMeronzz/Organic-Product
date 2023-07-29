@@ -1,0 +1,74 @@
+{% extends 'farmer/index.html' %}
+{% block content %}
+
+<style>
+    table,th {color:white;}
+</style>
+<div>
+    <div style="min-height:250px; background-color:#207317;">
+    <center><br><br>
+        <b><h2 style="color:white; font-size:35px;">ADD ITEM DETAILS</h2></b><br>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="hidden" value="{{data.0}}" name="shopid"/>
+            <input type="hidden" value="{{data1.0}}" name="idcategory"/>
+            <table width="400px" border="2px" bgcolor="#10e317">
+                 <tr>
+                    <th><h4>Quantity in kg</h4></th>
+                    <td><input type="text" name="quantity" required></td>
+                </tr>
+<!--                 <tr>-->
+<!--                    <th><h4>Total amount</h4></th>-->
+<!--                    <td><input type="text" name="totalamount" required></td>-->
+<!--                </tr>-->
+                <tr>
+                    <th><h4>Image</h4></th>
+                    <td><input type="file" name="image" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="save"></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+    </center>
+    </div>
+
+
+ <div class="offer-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
+                        <div class="offer_box">
+                            <h3>Agriculture Products</h3>
+                            <figure><img src="../static/shop/images/offer1.png" alt="img" /></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin_ttt">
+                        <div class="offer_box">
+                            <h3>Fresh Vegatables</h3>
+                            <figure><img src="../static/shop/images/offer2.png" alt="img" /></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmodmpor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin-lkk">
+                        <div class="offer_box">
+                            <h3>Farm Factory</h3>
+                            <figure><img src="../static/shop/images/offer3.png" alt="img" /></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmodmpor incididunt ut labore et dolore magna</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <a class="read-more">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

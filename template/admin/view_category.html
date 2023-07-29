@@ -1,0 +1,39 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">ALL CATEGORY</h2>
+                    </center><br>
+                      <a href="../addcategory" style="float:right; margin-top:1px; margin-right:10vh;"><button style="color:blue;">add category</button></a>
+                      <br><br>
+                      <div class="table-responsive">
+
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th style="color:white;"><h4>No.</h4></th>
+                                <th style="color:white;"><h4>CATEGORY NAME</h4></th>
+                                <th style="color:white;"><h4>ADD ITEM TO CATEGORY</h4></th>
+                                <th style="color:white;"><h4>EDIT CATEGORY</h4></th>
+                                <th style="color:white;"><h4>DELETE CATEGORY</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+
+                              <td style="color:white;"> {{ forloop.counter }}</td>
+                              <td><h5 style="color:white;">{{i.1}}</h5></td>
+                              <td><div class="badge badge-outline-success"><a href="../additems/{{i.0}}" style="color:green;">add items</a></div></td>
+                              <td><div class="badge badge-outline-warning"><a href="../editcategory/{{i.0}}" style="color:orange;">edit</a></div></td>
+                              <td><div class="badge badge-outline-danger"><a href="../deletecategory/{{i.0}}" style="color:red;">delete</a></div></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

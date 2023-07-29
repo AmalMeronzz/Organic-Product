@@ -1,0 +1,38 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">ALL CATEGORY</h2>
+                    </center><br>
+                      <a href="../categoryview" style="float:right; margin-top:1px; margin-right:10vh;"><button style="color:blue;">category</button></a>
+                      <br><br>
+                      <div class="table-responsive">
+
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th style="color:white;"><h4>No.</h4></th>
+                              <th style="color:white;"><h4>ITEM NAME</h4></th>
+                              <th style="color:white;"><h4>FARMER PRICE</h4></th>
+                              <th style="color:white;"><h4>PUBLIC PRICE</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td style="color:white;"> {{ forloop.counter }}</td>
+                              <td><h5 style="color:white;">{{i.2}}</h5></td>
+                              <td><h5 style="color:white;">{{i.3}}</h5></td>
+                              <td><h5 style="color:white;">{{i.4}}</h5></td>
+                              <td><a href="../edititem/{{i.0}}"><input type="submit" value="edit" style="background-color:orange; color:white;"></a></td>
+                              <td><a href="../deleteitem/{{i.0}}"><input type="submit" value="delete" style="background-color:red; color:white;"></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

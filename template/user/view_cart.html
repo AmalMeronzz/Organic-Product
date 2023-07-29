@@ -1,0 +1,87 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<style>
+    table{
+     border-collapse: collapse;
+      width:100%;
+    }
+</style>
+
+<div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text product-more">
+                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Shopping Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section Begin -->
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cart-table">
+                        <table  >
+                            <thead>
+                                <tr>
+                                    <th><h3>Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                                    <th><h3>Product Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                                    <th><h3>Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                                    <th><h3>Quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                                    <th><h3>Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                                    <th><h3>Remove&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                                </tr>
+                            </thead>
+                            {% for i in data %}
+                            <tbody>
+                                <tr>
+                                    <td class="cart-pic first-row"><img src="../media/{{i.5}}" width="100px;" alt=""></td>
+                                    <td class="cart-title first-row">
+                                        <h4>{{i.6}}</h4>
+                                    </td>
+                                    <td class="p-price first-row"><h4>{{i.7}}</h4></td>
+                                     <td><h4>{{i.3}}</h4></td>
+                                    <td><h4>{{i.4}}</h4></td>
+                                    <td class="close-td first-row"><a href="/removecart/{{i.0}}"><img src="https://img.icons8.com/?size=512&id=47259&format=png" width="40px;"></a></td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="cart-buttons">
+                                <a href="#" class="primary-btn continue-shop">Continue shopping</a>
+                                <a href="#" class="primary-btn up-cart">Update cart</a>
+                            </div>
+                            <div class="discount-coupon">
+                                <h6>Discount Codes</h6>
+                                <form action="" class="coupon-form">
+                                    <input type="text" placeholder="Enter your codes">
+                                    <button type="submit" class="site-btn coupon-btn">Apply</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 offset-lg-4">
+                            <div class="proceed-checkout">
+                                <ul>
+                                    <li style="background:white;" class="cart-total"><h2>Total :{{amount.0}}</h2></li>
+                                </ul>
+                                <a href="../checkoutpage" class="proceed-btn"><h4 style="background:#c75322; color:white; width:280px;">PROCEED TO CHECK OUT</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

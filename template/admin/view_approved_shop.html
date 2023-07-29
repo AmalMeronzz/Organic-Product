@@ -1,0 +1,45 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">NEW SHOP REGISTRATION</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th>No.</th>
+                                <th>IMAGE</th>
+                                <th>SHOP NAME</th>
+                                <th>PLACE</th>
+                                <th>ADDRESS</th>
+                                <th>PHONE</th>
+                                <th>EMAIL</th>
+                                <th>PASSWORD</th>
+
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td> {{ forloop.counter }}</td>
+                                <td><img src="../media/{{i.7}}"></td>
+                                <td>{{i.1}}</td>
+                                <td>{{i.6}}</td>
+                                <td>{{i.2}}</td>
+                                <td>{{i.3}}</td>
+                                <td>{{i.4}}</td>
+                                <td>{{i.5}}</td>
+                              <td><a href="../editshop/{{i.0}}"><input type="submit" value="edit" style="background-color:orange; color:white;"></a></td>
+                              <td><a href="../viewfarmer/{{i.0}}"><input type="submit" value="view farmer" style="background-color:blue; color:white;"></a></td>
+                              <td><a href="../deleteshop/{{i.0}}"><input type="submit" value="Delete" style="background-color:red; color:white;"></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

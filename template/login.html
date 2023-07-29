@@ -1,0 +1,79 @@
+{% extends 'login_home.html'%}
+{% block content %}
+<style>
+    body{
+	margin: 0;
+	padding: 0;
+	background: #30880d;
+}
+
+.login{
+	width: 340px;
+	height: 400px;
+	background: #0c0f0a;
+	margin: auto;
+	margin-top: 180px;
+	padding: 30px;
+	border-top: 4px solid black;
+}
+
+.login h5{
+	margin: 0;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	height: 40px;
+	border-bottom: 1px solid;
+	margin-bottom: 30px;
+	font-family: sans-serif;
+}
+
+.text{
+	width: 94%;
+	color: #fff;
+	border: 1px solid #1293de;
+	background: #212121;
+	font-size: 14px;
+	padding: 14px 10px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.btn{
+	border: none;
+	width: 100%;
+	height: 42px;
+	background: #30880d;
+	color: wheat;
+	font-weight: bold;
+}
+
+.shop{
+    float:right;
+    color;red;
+}
+
+.user{
+    float:left;
+
+}
+</style>
+<div class="login">
+	<h5>Login Form</h5>
+    <form class="form" method="post" action="../login">
+		{% csrf_token %}
+	<input type="text" name="name" placeholder="Username" value="" class="text" required>
+	<input type="Password" name="password" placeholder="Password" value="" class="text" required>
+	<input type="submit" name="usern" value="Login" class="btn">
+    </form>
+    <div>
+        <div class="shop"><br><br>
+            <a href="../shopregistration"><h5 style="color;white;">Shop register</h5></a>
+        </div>
+        <div class="user"><br><br>
+				<a href="../userregistration" ><h5 style="color;white;">User register</h5></a>
+        </div>
+    </div>
+</div>
+<br><br><br>
+{% endblock %}

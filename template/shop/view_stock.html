@@ -1,0 +1,33 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:500px;">
+                  <div class="card-body">
+                    <center><br>
+                      <h2 class="card-title">FARMER UPLOADED PRODUCTS</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th>No.</th>
+                                <th>IMAGE</th>
+                                <th>PRODUCT NAME</th>
+                                <th>BALANCE QUANTITY</th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td> {{ forloop.counter }}</td>
+                                <td><img src="../media/{{i.0}}" width="100px"></td>
+                                <td>{{i.1}}</td>
+                                <td>{{i.2}}</td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

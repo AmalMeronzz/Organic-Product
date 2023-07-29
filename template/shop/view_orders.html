@@ -1,0 +1,42 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body"><br><br>
+                    <center>
+                      <h2 class="card-title">VIEW ORDER HISTORY</h2>
+                    </center>
+                      <br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h4>USER NAME</h4></th>
+                              <th><h4>ADDRESS</h4></th>
+                              <th><h4>IMAGE</h4></th>
+                              <th><h4>PRODUCT NAME</h4></th>
+                              <th><h4>QUANTITY</h4></th>
+                              <th><h4>TOTAL PRICE</h4></th>
+                              <th><h4>ORDER DATE</h4></th>
+                              <th><h4>SHOP NAME</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h5 >{{i.6}}</h5></td>
+                              <td><h5 >{{i.8}}&nbsp;{{i.7}}</h5></td>
+                              <td><img src="media/{{i.5}}" width="100px;"></td>
+                              <td><h5 >{{i.4}}</h5></td>
+                              <td><h5 >{{i.0}}</h5></td>
+                              <td><h5 >{{i.1}}</h5></td>
+                              <td><h5 >{{i.3}}</h5></td>
+                              <td><h5 >{{i.2}}</h5></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

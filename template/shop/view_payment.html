@@ -1,0 +1,33 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body" style="padding-left:100px;"><br><br>
+                    <center>
+                      <h2 class="card-title">PAYMENT DETAILS</h2>
+
+                      <br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h3>USER NAME</h3></th>
+                              <th><h3>PAID DATE</h3></th>
+                              <th><h3>AMOUNT</h3></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h4 >{{i.1}}</h4></td>
+                              <td><h4 >{{i.4}}</h4></td>
+                              <td><h4 >{{i.5}}</h4></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                           </center>
+                  </div>
+</div>
+{% endblock %}

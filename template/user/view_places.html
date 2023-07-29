@@ -1,0 +1,31 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">Select Place</h2>
+                    </center><br>
+                      <br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+
+                              <th><h4>Place</h4></th>
+                              <th><h4>Select</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h5 >{{i.0}}</h5></td>
+                              <td><a href="../viewshop/{{i.1}}"><button type="button" class="btn" style="background:orange; color:white;">view shop</button></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

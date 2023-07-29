@@ -1,0 +1,19 @@
+{% extends 'user/index.html' %}
+{% block content %}
+<br><br><br><br>
+<center>
+<div class="col-lg-4 col-md-6 mt-lg-n5" >
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-50 bg-secondary p-5">
+                        <h3 class="text-white"><strong>ADD FEEDBACK TO {{data.0}}</strong></h3><br>
+                        <form  method="post">
+                            {% csrf_token %}
+
+                                <textarea style="width:220px; height:90px;" placeholder="Your feedback " name="feedback"></textarea><br><br>`
+                                <input type="submit" value="submit" style="background:#34AD54; color:white; border:none; " >
+
+                        </form>
+                    </div>
+ </div>
+</center>
+<br><br>
+{% endblock %}

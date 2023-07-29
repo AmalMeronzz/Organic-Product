@@ -1,0 +1,44 @@
+{% extends 'shop/index.html'%}
+{% block content %}
+
+<div style="min-height:500px;">
+    <center><br><br>
+        <div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">NEW FARMERS LIST</h2>
+                    </center><br><br>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>No.</th>
+                            <th>FARMER NAME</th>
+                            <th>ADDRESS</th>
+                            <th>PHONE</th>
+                            <th>EMAIL</th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                            <td> {{ forloop.counter }}</td>
+                            <td>{{i.0}}</td>
+                            <td>{{i.2}}</td>
+                            <td>{{i.3}}</td>
+                            <td>{{i.4}}</td>
+                            <td><a href="../approvefarmer/{{i.0}}"><input type="submit" value="Approve" style="background-color:green; color:white;"></a></td>
+                            <td><a href="../deletefarmer/{{i.0}}"><input type="submit" value="Delete" style="background-color:red; color:white;"></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+        </div>
+
+    </center>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<div style="background:#fff;">
+
+<center>
+<br><br>
+	<div class="header-banner">
+				<div class="container">
+					<h1>PRODUCTS</h1>
+					<br><br>
+				</div>
+    </div>
+		<!--end header-section-->
+			<!--services-->
+			<div class="content">
+				<div class="services">
+					<div class="container">
+						<div class="service-grids">
+							<div class="row">
+								{% for i in data %}
+                                <div class="col-md-3 col-lg-3  service-grid" style="border:2px;">
+
+                                    <img src="../media/{{i.8}}" style="max-height:150px;" class="img-responsive" alt=""/>
+                                    <b><h3>{{i.11}}</h3></b>
+                                    <h5>price :{{i.12}}</h5>
+
+
+									<a href="../productdetails/{{i.0}}"><button type="button" class="btn" style="background:orange; color:white;">view product </button></a>
+                                </div>
+									{% endfor %}
+							</div>
+                                <div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+            </div>
+	<br>
+</center>
+</div>
+
+{% endblock %}

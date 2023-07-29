@@ -1,0 +1,44 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<div style="background:#fff;">
+
+<center>
+<br><br>
+	<div class="header-banner">
+				<div class="container">
+					<h1>SHOPS</h1>
+					<br><br>
+				</div>
+    </div>
+		<!--end header-section-->
+			<!--services-->
+			<div class="content">
+				<div class="services">
+					<div class="container">
+						<div class="service-grids">
+							<div class="row">
+
+                                <div class="col-md-12 col-lg-12  service-grid">
+
+                                    <img src="../media/{{i.7}}" class="img-responsive" alt=""/>
+                                    <h3><b>{{i.1}}</b></h3>
+                                    <h5>{{i.6}}</h5>
+                                    <h5>{{i.3}}</h5>
+                                    <p>{{i.4}}</p>
+									<a href="../addfeedback/{{i.0}}"><button style="background:white; border-color:#FF9933; color:#FF9933;">add feedback</button></a>
+									<a href="../allproducts/{{i.0}}"><button style="background:white; border-color:green; color:green;">view items</button></a>
+
+								</div>
+
+							</div>
+                                <div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+            </div>
+	<br>
+</center>
+</div>
+
+{% endblock %}
